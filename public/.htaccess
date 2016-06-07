@@ -1,0 +1,10 @@
+#switch to php 5.5
+AddHandler application/x-httpd-php55 .php .php5 .php4 .php3
+
+# init rewrite engine
+RewriteEngine On
+RewriteBase /
+RedirectMatch 301 ^(.+)/$ $1
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . /index.php [L]
+
